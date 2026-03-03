@@ -4,6 +4,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
 import { entry_db_pool } from "./db/db.js";
 import { checkAvailabilityTool } from "./tools/availability-tool.js";
+import { sendEmailGapi } from "./tools/sent-email-gapi.js";
 import loadTenantConfigs from "./utils/load-tenant-configs.js";
 
 const app = express();
@@ -11,6 +12,7 @@ app.use(express.json());
 
 const toolRegistry = new Map([
   [checkAvailabilityTool.name, checkAvailabilityTool],
+  [sendEmailGapi.name, sendEmailGapi],
 ]);
 
 const registerToolsOnServer = (server) => {
