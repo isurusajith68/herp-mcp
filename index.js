@@ -170,13 +170,13 @@ const PORT = process.env.PORT || 5000;
 async function start() {
   try {
     await entry_db_pool.query("SELECT 1");
-    console.log("✅ Database connected");
+    console.log("Database connected");
     await loadTenantConfigs();
     app.listen(PORT, () => {
-      console.log(`🌐 Backend + MCP HTTP adapter running on port ${PORT}`);
+      console.log(`MCP HTTP adapter running on port ${PORT}`);
     });
 
-    console.log("🏨 MCP tools ready");
+    console.log("MCP tools ready");
   } catch (err) {
     console.error("Startup error:", err);
     process.exit(1);
