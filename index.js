@@ -182,6 +182,7 @@ async function start() {
     console.error("Startup error:", err);
     process.exit(1);
   }
-}
+}3
+
 
 start();
