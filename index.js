@@ -177,6 +177,7 @@ async function start() {
     });
 
     console.log("MCP tools ready");
+    
   } catch (err) {
     console.error("Startup error:", err);
     process.exit(1);
