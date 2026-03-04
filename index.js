@@ -15,6 +15,7 @@ const toolRegistry = new Map([
   [sendEmailGapi.name, sendEmailGapi],
 ]);
 
+
 const registerToolsOnServer = (server) => {
   for (const tool of toolRegistry.values()) {
     server.registerTool(
